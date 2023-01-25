@@ -1,11 +1,19 @@
 import java.awt.*;
-import java.util.ArrayList;
-import java.util.List;
 
 public class Board {
-    private final int SIZE_OF_BOARD = 8;
+    private boolean filedIsBlack;
 
     void render(Graphics g) {
-        g.drawRect(10, 10 , 100, 100);
+        for (int i = 0, y = 10; i < 8; i++, y += 100) {
+            for (int j = 0, x = 10; j < 8; j++, x += 100) {
+                if (filedIsBlack) {
+                    g.fillRect(x, y, 100, 100);
+                } else {
+                    g.drawRect(x, y, 100, 100);
+                }
+                filedIsBlack = !filedIsBlack;
+            }
+            filedIsBlack = !filedIsBlack;
+        }
     }
 }
