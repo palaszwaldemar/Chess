@@ -1,10 +1,8 @@
 import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
-import java.util.ArrayList;
-import java.util.List;
-
 public class Gameplay implements MouseListener {
+    private final Board board = new Board();
 
 
     public Gameplay() {
@@ -14,6 +12,7 @@ public class Gameplay implements MouseListener {
     }
 
     public void render(Graphics g) {
+        board.render(g);
     }
 
 
