@@ -12,6 +12,7 @@ public class Board {
     }
 
     private void displayChessBoard(Graphics g) {
+        g.setColor(Color.gray);
         for (int i = 0; i < 8; i++) {
             for (int j = 0; j < 8; j++) {
                 if (((x + y) / 100) % 2 != 0) {
