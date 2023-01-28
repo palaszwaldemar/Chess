@@ -3,7 +3,7 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 public class Gameplay implements MouseListener {
     private final Board board = new Board();
-    private Pawn pawn = new Pawn(40, 740);
+    private Pawn pawn = new Pawn(10, 610);
 
 
     public Gameplay() {
