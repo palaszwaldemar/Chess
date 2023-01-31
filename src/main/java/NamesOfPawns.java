@@ -1,6 +1,16 @@
 public enum NamesOfPawns {
     BLACKPAWN("pawnBlack"),
-    WHITEPAWN("pawnWhite");// TODO: 31.01.2023 dodać resztę figur
+    WHITEPAWN("pawnWhite"),
+    BLACKROOK("rookBlack"),
+    WHITEROOK("rookWhite"),
+    BLACKKNIGHT("knightBlack"),
+    WHITEKNIGHT("knightWhite"),
+    BLACKRUNNER("runnerBlack"),
+    WHITERUNNER("runnerWhite"),
+    BLACKQUEEN("queenBlack"),
+    WHITEQUEEN("queenWhite"),
+    BLACKKING("kingBlack"),
+    WHITEKING("kingWhite");
 
     private final String name;
 
