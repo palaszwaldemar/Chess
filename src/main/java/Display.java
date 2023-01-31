@@ -1,7 +1,6 @@
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseListener;
-import java.util.List;
 
 import static javax.swing.WindowConstants.EXIT_ON_CLOSE;
 
@@ -9,7 +8,7 @@ import static javax.swing.WindowConstants.EXIT_ON_CLOSE;
 public final class Display {
 
     private static final int DEFAULT_WIDTH = 820;
-    private static final int DEFAULT_HEIGHT =820;
+    private static final int DEFAULT_HEIGHT = 820;
 
     private static int width;
     private static int height;
@@ -17,8 +16,8 @@ public final class Display {
     private JFrame frame;
     private Canvas canvas;
 
-    private String title;
-    private Dimension size;
+    private final String title;
+    private final Dimension size;
 
     public Display(String title) {
         this.title = title;
