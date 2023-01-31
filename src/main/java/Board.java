@@ -1,7 +1,7 @@
 import java.awt.*;
 
 public class Board {
-    private final int HEIGHT_OF_FIELD = 100;// CHECK : 27.01.2023 czy te pola powinienem umieścić w metodzie render?
+    private final int HEIGHT_OF_FIELD = 100;
     private final int WIDTH_OF_FIELD = 100;// CHECK : 27.01.2023 zmiana wymiarów pola na parzyste źle rysuje
     private int x = 10;
     private int y = 10;

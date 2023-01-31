@@ -9,8 +9,8 @@ public class Pawn {
     private final int number;
     private BufferedImage bufferedImage;
 
-    public Pawn(char letter, int number, NamesOfPawns namesOfPawns) {
-        this.letter = letter;
+    public Pawn(XCord xCord, int number, NamesOfPawns namesOfPawns) {
+        this.letter = xCord.getName();
         this.number = number;
         try {
             this.bufferedImage = ImageIO.read(Objects.requireNonNull(Pawn.class.getResource("/chess pieces/" + namesOfPawns.getName() + ".png")));

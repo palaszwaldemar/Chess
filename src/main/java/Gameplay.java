@@ -4,8 +4,8 @@ import java.awt.event.MouseListener;
 
 public class Gameplay implements MouseListener {
     private final Board board = new Board();
-    private final Pawn blackPawn1 = new Pawn('a', 7, NamesOfPawns.BLACKPAWN);// CHECK : 31.01.2023 czy dobrym pomysłem jest tworzenie pionków poprzez dodanie enum do liter i liczb
-    private final Pawn whitePawn1 = new Pawn('a', 2, NamesOfPawns.WHITEPAWN);
+    private final Pawn blackPawn1 = new Pawn(XCord.A, 7, NamesOfPawns.BLACKPAWN);
+    private final Pawn whitePawn1 = new Pawn(XCord.A, 2, NamesOfPawns.WHITEPAWN);
 
 
     public Gameplay() {
