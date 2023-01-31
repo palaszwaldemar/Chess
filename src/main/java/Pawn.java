@@ -9,7 +9,8 @@ public class Pawn {
     private final int number;
     private BufferedImage bufferedImage;
 
-    public Pawn(char letter, int number, String name) {
+    public Pawn(char letter, int number, NamesOfPawns namesOfPawns) {
+        String name = namesOfPawns.getName();
         this.letter = letter;
         this.number = number;
         try {

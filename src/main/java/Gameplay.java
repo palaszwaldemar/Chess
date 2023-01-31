@@ -1,10 +1,11 @@
 import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+
 public class Gameplay implements MouseListener {
     private final Board board = new Board();
-    private final Pawn blackPawn1 = new Pawn('a', 7, "pawnBlack");
-
+    private final Pawn blackPawn1 = new Pawn('a', 7, NamesOfPawns.BLACKPAWN);// CHECK : 31.01.2023 czy dobrym pomysłem jest tworzenie pionków poprzez dodanie enum do liter i liczb
+    private final Pawn whitePawn1 = new Pawn('a', 2, NamesOfPawns.WHITEPAWN);
 
 
     public Gameplay() {
@@ -16,6 +17,7 @@ public class Gameplay implements MouseListener {
     public void render(Graphics g) {
         board.render(g);
         blackPawn1.render(g);
+        whitePawn1.render(g);
     }
 
 
