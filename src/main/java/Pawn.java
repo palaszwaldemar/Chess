@@ -5,22 +5,22 @@ import java.io.IOException;
 import java.util.Objects;
 
 public class Pawn {
-    private final int x;
-    private final int y;
+    private final char letter;
+    private final int number;
     private BufferedImage bufferedImage;
 
-    public Pawn(int x, int y, String name) {
-        this.x = x;
-        this.y = y;
+    public Pawn(char letter, int number, String name) {
+        this.letter = letter;
+        this.number = number;
         try {
             this.bufferedImage = ImageIO.read(Objects.requireNonNull(Pawn.class.getResource("/chess pieces/pawns/" + name + ".png")));
 
         } catch (IllegalArgumentException | IOException e) {
-            System.out.println("błąd"); // TODO: 28.01.2023 usunąć
+            e.printStackTrace();// CHECK : 31.01.2023 czemu ta metoda ?
         }
     }
 
     void render(Graphics g) {
-        g.drawImage(bufferedImage, x, y, null);
+        g.drawImage(bufferedImage, Cords.letterToPixels(letter), Cords.numberToPixels(number), null);
     }
 }
