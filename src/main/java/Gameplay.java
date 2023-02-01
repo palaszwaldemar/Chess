@@ -4,9 +4,7 @@ import java.awt.event.MouseListener;
 
 public class Gameplay implements MouseListener {
     private final Board board = new Board();
-    private final Pawn blackPawn1 = new Pawn(XCord.A, 7, NamesOfPawns.BLACKPAWN);
-    private final Pawn whitePawn1 = new Pawn(XCord.A, 2, NamesOfPawns.WHITEPAWN);
-
+    private final ChessPiecesFactory chessPiecesFactory = new ChessPiecesFactory();
 
     public Gameplay() {
     }
@@ -16,8 +14,7 @@ public class Gameplay implements MouseListener {
 
     public void render(Graphics g) {
         board.render(g);
-        blackPawn1.render(g);
-        whitePawn1.render(g);
+        chessPiecesFactory.render(g);
     }
 
 
