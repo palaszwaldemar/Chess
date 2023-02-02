@@ -1,10 +1,7 @@
 import java.awt.*;
 
 public class Board {
-    private final int HEIGHT_OF_FIELD = 100;
-    private final int WIDTH_OF_FIELD = 100;// CHECK : 27.01.2023 zmiana wymiarów pola na parzyste źle rysuje
-    private int x = 10;
-    private int y = 10;
+    private final int SIZE_OF_FIELD = 100;
 
     void render(Graphics g) {// CHECK : 27.01.2023 render odpala się na okrągło?
         displayChessBoard(g);
