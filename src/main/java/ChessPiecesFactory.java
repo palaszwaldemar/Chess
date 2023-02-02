@@ -33,10 +33,8 @@ public class ChessPiecesFactory {
         }
     }
 
-    void render(Graphics g) {
-        for (Pawn pawn : pawns) {
-            pawn.render(g);
-        }
+    public List<Pawn> getPawns() {
+        return pawns;
     }
 }
 
