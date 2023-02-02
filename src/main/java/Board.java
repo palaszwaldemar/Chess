@@ -28,18 +28,16 @@ public class Board {
         displayLetters(g);
     }
 
-    private void displayNumbers(Graphics g) {
+    private void displayNumbers(Graphics g) {// CHECK : 02.02.2023 displayNumbers i displayLetters są bardzo podobne. Czy trzeba to zmienić?
+        int yCord = 20;
         for (int i = 8; i > 0; i--) {
-            if (((x + y) / 100) % 2 != 0) {
+            g.setColor(Color.GRAY);
+            if (i % 2 != 0) {
                 g.setColor(Color.WHITE);
-            } else {
-                g.setColor(Color.BLACK);
             }
-            g.drawString("" + i, x + 5, y + 20);
-            y += HEIGHT_OF_FIELD;
+            g.drawString("" + i, 5, yCord);
+            yCord += SIZE_OF_FIELD;
         }
-        x = 10;
-        y = 10;
     }
 
     private void displayLetters(Graphics g) {
