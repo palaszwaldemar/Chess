@@ -12,20 +12,15 @@ public class Board {
     }
 
     private void displayChessBoard(Graphics g) {
-        g.setColor(Color.gray);
-        for (int i = 0; i < 8; i++) {
-            for (int j = 0; j < 8; j++) {
-                if (((x + y) / 100) % 2 != 0) {
-                    g.fillRect(x, y, WIDTH_OF_FIELD, HEIGHT_OF_FIELD);
-                } else {
-                    g.drawRect(x, y, WIDTH_OF_FIELD, HEIGHT_OF_FIELD);
+        g.setColor(Color.GRAY);
+        for (int y = 0; y < 8; y++) {
+            for (int x = 0; x < 8; x++) {
+                if ((y + x) % 2 != 0) {
+                    g.fillRect(x * SIZE_OF_FIELD, y * SIZE_OF_FIELD, SIZE_OF_FIELD, SIZE_OF_FIELD);
                 }
-                x += WIDTH_OF_FIELD;
+                g.drawRect(x * SIZE_OF_FIELD, y * SIZE_OF_FIELD, SIZE_OF_FIELD, SIZE_OF_FIELD);
             }
-            y += HEIGHT_OF_FIELD;
-            x = 10;
         }
-        y = 10;
     }
 
     private void displayInfoAboutFields(Graphics g) {
