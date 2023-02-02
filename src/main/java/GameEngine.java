@@ -23,7 +23,7 @@ public final class GameEngine implements Runnable {
     @Override
     public void run() {
         int fps = 60;
-        int timePerTick = 1_000_000_000 / fps;// CHECK : 31.01.2023 zmieniłem na int z double
+        double timePerTick = 1_000_000_000 / fps;
         double delta = 0;
         long now;
         long lastTime = System.nanoTime();
@@ -31,7 +31,7 @@ public final class GameEngine implements Runnable {
 
         while (running) {
             now = System.nanoTime();
-            delta += (double) (now - lastTime) / timePerTick; // CHECK : 31.01.2023 zrobiłem rzutowanie na double
+            delta += (now - lastTime) / timePerTick;
             timer += now - lastTime;
             lastTime = now;
 
