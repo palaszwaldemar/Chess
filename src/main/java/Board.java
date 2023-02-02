@@ -3,7 +3,8 @@ import java.awt.*;
 public class Board {
     private final int SIZE_OF_FIELD = 100;
 
-    void render(Graphics g) {// CHECK : 27.01.2023 render odpala się na okrągło?
+    void render(Graphics g) {
+        g.translate(10, 10);
         displayChessBoard(g);
         displayInfoAboutFields(g);
     }
