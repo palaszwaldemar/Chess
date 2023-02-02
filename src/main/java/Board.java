@@ -42,17 +42,15 @@ public class Board {
 
     private void displayLetters(Graphics g) {
         char letter = 97;
+        int xCord = SIZE_OF_FIELD - 10;
         for (int i = 8; i > 0; i--) {
-            if (((x + y) / 100) % 2 != 0) {
-                g.setColor(Color.BLACK);
-            } else {
+            g.setColor(Color.GRAY);
+            if (i % 2 == 0) {
                 g.setColor(Color.WHITE);
             }
-            g.drawString("" + letter, x + 90, y + 790);
+            g.drawString("" + letter, xCord, (SIZE_OF_FIELD * 8) - 5);
+            xCord += SIZE_OF_FIELD;
             letter++;
-            x += WIDTH_OF_FIELD;
         }
-        x = 10;
-        y = 10;
     }
 }
