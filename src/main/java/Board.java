@@ -1,7 +1,7 @@
 import java.awt.*;
 
 public class Board {
-    private final int SIZE_OF_FIELD = 100;
+    private static final int SIZE_OF_FIELD = 100; // CHECK : 03.02.2023 zmiana rozmiaru pola nie zmienia rozmiaru zdjęcia figur
 
     void render(Graphics g) {
         g.translate(10, 10);
@@ -50,5 +50,9 @@ public class Board {
             xCord += SIZE_OF_FIELD;
             letter++;
         }
+    }
+
+    public static int getSIZE_OF_FIELD() {
+        return SIZE_OF_FIELD;
     }
 }
