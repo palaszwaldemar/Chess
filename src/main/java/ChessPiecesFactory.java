@@ -6,27 +6,27 @@ public class ChessPiecesFactory {
 
     public ChessPiecesFactory() {
         for (int i = 0; i < 8; i++) {
-            chessPieces.add(new ChessPiece(i, 6, NamesOfPawns.WHITEPAWN));
-            chessPieces.add(new ChessPiece(i, 1, NamesOfPawns.BLACKPAWN));
+            chessPieces.add(new ChessPiece(i, 6,ChessPieceType.PAWN, ChessPieceColor.WHITE));
+            chessPieces.add(new ChessPiece(i, 1, ChessPieceType.PAWN, ChessPieceColor.BLACK));
             if (i == 0 || i == 7) {
-                chessPieces.add(new ChessPiece(i, 7, NamesOfPawns.WHITEROOK));
-                chessPieces.add(new ChessPiece(i, 0, NamesOfPawns.BLACKROOK));
+                chessPieces.add(new ChessPiece(i, 7, ChessPieceType.ROOK, ChessPieceColor.WHITE));
+                chessPieces.add(new ChessPiece(i, 0, ChessPieceType.ROOK, ChessPieceColor.BLACK));
             }
             if (i == 1 || i == 6) {
-                chessPieces.add(new ChessPiece(i, 7, NamesOfPawns.WHITEKNIGHT));
-                chessPieces.add(new ChessPiece(i, 0, NamesOfPawns.BLACKKNIGHT));
+                chessPieces.add(new ChessPiece(i, 7, ChessPieceType.KNIGHT, ChessPieceColor.WHITE));
+                chessPieces.add(new ChessPiece(i, 0, ChessPieceType.KNIGHT, ChessPieceColor.BLACK));
             }
             if (i == 2 || i == 5) {
-                chessPieces.add(new ChessPiece(i, 7, NamesOfPawns.WHITERUNNER));
-                chessPieces.add(new ChessPiece(i, 0, NamesOfPawns.BLACKRUNNER));
+                chessPieces.add(new ChessPiece(i, 7, ChessPieceType.RUNNER, ChessPieceColor.WHITE));
+                chessPieces.add(new ChessPiece(i, 0, ChessPieceType.RUNNER, ChessPieceColor.BLACK));
             }
             if (i == 3) {
-                chessPieces.add(new ChessPiece(i, 7, NamesOfPawns.WHITEQUEEN));
-                chessPieces.add(new ChessPiece(i, 0, NamesOfPawns.BLACKQUEEN));
+                chessPieces.add(new ChessPiece(i, 7, ChessPieceType.QUEEN, ChessPieceColor.WHITE));
+                chessPieces.add(new ChessPiece(i, 0, ChessPieceType.QUEEN, ChessPieceColor.BLACK));
             }
             if (i==4) {
-                chessPieces.add(new ChessPiece(i, 7, NamesOfPawns.WHITEKING));
-                chessPieces.add(new ChessPiece(i, 0, NamesOfPawns.BLACKKING));
+                chessPieces.add(new ChessPiece(i, 7, ChessPieceType.KING, ChessPieceColor.WHITE));
+                chessPieces.add(new ChessPiece(i, 0, ChessPieceType.KING, ChessPieceColor.BLACK));
             }
         }
     }

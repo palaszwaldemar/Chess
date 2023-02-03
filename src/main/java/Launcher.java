@@ -8,3 +8,6 @@ public class Launcher {
         gameEngine.start();
     }
 }
+
+
+// CHECK : 03.02.2023 testy jednostkowe?

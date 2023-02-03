@@ -5,17 +5,16 @@ import java.io.IOException;
 import java.util.Objects;
 
 public class ChessPiece {
-    private final int x;
-    private final int y;
+    private int x;
+    private int y;
     private Image image;
 
-    public ChessPiece(int x, int y, NamesOfPawns namesOfPawns) {
+    public ChessPiece(int x, int y, ChessPieceType chessPieceType, ChessPieceColor chessPieceColor) {
         this.x = x;
         this.y = y;
         try {
-            BufferedImage bufferedImage = ImageIO.read(Objects.requireNonNull(ChessPiece.class.getResource("/chess pieces/" + namesOfPawns.getName() + ".png")));
-            this.image = bufferedImage.getScaledInstance(Board.getSIZE_OF_FIELD(), Board.getSIZE_OF_FIELD(), Image.SCALE_DEFAULT);
-
+            BufferedImage bufferedImage = ImageIO.read(Objects.requireNonNull(ChessPiece.class.getResource("/chess pieces/" + chessPieceType.getName() + chessPieceColor.getName() + ".png")));
+            this.image = bufferedImage.getScaledInstance(Board.getSIZE_OF_FIELD(), Board.getSIZE_OF_FIELD(), Image.SCALE_DEFAULT); // CHECK : 03.02.2023 możliwość zmiany rozmiaru figur szachowych ze zmianą rozmiaru szachownicy
         } catch (IllegalArgumentException | IOException e) {
             e.printStackTrace();
         }
