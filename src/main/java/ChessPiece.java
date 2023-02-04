@@ -20,6 +20,22 @@ public class ChessPiece {
         }
     }
 
+    public int getX() {
+        return x;
+    }
+
+    public int getY() {
+        return y;
+    }
+
+    public void setX(int x) {
+        this.x = x;
+    }
+
+    public void setY(int y) {
+        this.y = y;
+    }
+
     void render(Graphics g) {
         g.drawImage(image, x * Board.getSIZE_OF_FIELD(), y * Board.getSIZE_OF_FIELD(), null);
     }
