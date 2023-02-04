@@ -4,7 +4,6 @@ public class Board {
     private static final int SIZE_OF_FIELD = 100;
 
     void render(Graphics g) {
-        g.translate(10, 10);
         displayChessBoard(g);
         displayInfoAboutFields(g);
     }

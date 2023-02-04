@@ -14,7 +14,7 @@ public class Gameplay implements MouseListener {
 
     public void render(Graphics g) {
         board.render(g);
-        for (ChessPiece chessPiece : chessPiecesFactory.getPawns()) {
+        for (ChessPiece chessPiece : chessPiecesFactory.getChessPieces()) {
             chessPiece.render(g);
         }
     }

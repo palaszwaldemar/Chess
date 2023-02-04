@@ -31,7 +31,7 @@ public class ChessPiecesFactory {
         }
     }
 
-    public List<ChessPiece> getPawns() {
+    public List<ChessPiece> getChessPieces() {
         return chessPieces;
     }
 }
