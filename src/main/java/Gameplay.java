@@ -5,7 +5,11 @@ import java.awt.event.MouseListener;
 public class Gameplay implements MouseListener {
     private final Board board = new Board();
     private final ChessPiecesFactory chessPiecesFactory = new ChessPiecesFactory();
-    private ChessPiece actualChessPiece = null;
+    private static ChessPiece actualChessPiece = null;
+
+    public static ChessPiece getActualChessPiece() {
+        return actualChessPiece;
+    }
 
     public Gameplay() {
     }

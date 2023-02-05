@@ -3,13 +3,20 @@ import java.awt.*;
 public class Board {
     private static final int SIZE_OF_FIELD = 100;
 
+    public static int getSIZE_OF_FIELD() {
+        return SIZE_OF_FIELD;
+    }
+
     void render(Graphics g) {
+        g.setColor(Color.GRAY);
         displayChessBoard(g);
+        if (Gameplay.getActualChessPiece() != null) {
+            highlightSelectedField(g);
+        }
         displayInfoAboutFields(g);
     }
 
     private void displayChessBoard(Graphics g) {
-        g.setColor(Color.GRAY);
         for (int y = 0; y < 8; y++) {
             for (int x = 0; x < 8; x++) {
                 if ((y + x) % 2 != 0) {
@@ -51,7 +58,9 @@ public class Board {
         }
     }
 
-    public static int getSIZE_OF_FIELD() {
-        return SIZE_OF_FIELD;
+    private void highlightSelectedField(Graphics g) {
+        g.setColor(Color.PINK);
+        g.drawRect(Gameplay.getActualChessPiece().getX() * SIZE_OF_FIELD, Gameplay.getActualChessPiece().getY() * SIZE_OF_FIELD, SIZE_OF_FIELD, SIZE_OF_FIELD);
+        g.fillRect(Gameplay.getActualChessPiece().getX() * SIZE_OF_FIELD, Gameplay.getActualChessPiece().getY() * SIZE_OF_FIELD, SIZE_OF_FIELD, SIZE_OF_FIELD);
     }
 }
