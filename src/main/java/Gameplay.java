@@ -58,7 +58,7 @@ public class Gameplay implements MouseListener {
 
     private void moveChessPiece(MouseEvent e) {
         for (ChessPiece chessPiece : chessPiecesFactory.getChessPieces()) {
-            if (chessPiece == actualChessPiece) {
+            if (chessPiece.equals(actualChessPiece)) {
                 chessPiece.setX(Cords.xToCord(e.getX()));
                 chessPiece.setY(Cords.yToCord(e.getY()));
             }
