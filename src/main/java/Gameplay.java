@@ -32,23 +32,35 @@ public class Gameplay implements MouseListener {
     @Override
     public void mousePressed(MouseEvent e) {
         if (actualChessPiece != null) {
+            killChessPiece(e);
             moveChessPiece(e);
+            actualChessPiece = null;
             return;
         }
-        for (int i = 0; i < chessPiecesFactory.getChessPieces().size(); i++) {
-            if (Cords.xToCord(e.getX()) == chessPiecesFactory.getChessPieces().get(i).getX() && Cords.yToCord(e.getY()) == chessPiecesFactory.getChessPieces().get(i).getY()) {
-                actualChessPiece = chessPiecesFactory.getChessPieces().get(i);
+        for (ChessPiece chessPiece : chessPiecesFactory.getChessPieces()) {
+            if (Cords.xToCord(e.getX()) == chessPiece.getX() && Cords.yToCord(e.getY()) == chessPiece.getY()) {
+                actualChessPiece = chessPiece;
             }
         }
     }
 
+    private void killChessPiece(MouseEvent e) {
+        ChessPiece chessPieceToKill = null;
+        for (ChessPiece chessPiece : chessPiecesFactory.getChessPieces()) {
+            if (Cords.xToCord(e.getX()) == chessPiece.getX() &&
+                    Cords.yToCord(e.getY()) == chessPiece.getY() &&
+                    !actualChessPiece.getChessPieceColor().equals(chessPiece.getChessPieceColor())) {
+                chessPieceToKill = chessPiece;
+            }
+        }
+        chessPiecesFactory.removeChessPieceFromFactory(chessPieceToKill); // CHECK : 07.02.2023 dlaczego to działa?? przecież chessPieceToKill tylko wskazuje na to samo co chessPiece
+    }
+
     private void moveChessPiece(MouseEvent e) {
-        for (int i = 0; i < chessPiecesFactory.getChessPieces().size(); i++) {
-            if (chessPiecesFactory.getChessPieces().get(i).getX() == actualChessPiece.getX() && chessPiecesFactory.getChessPieces().get(i).getY() == actualChessPiece.getY()) {
-                chessPiecesFactory.getChessPieces().get(i).setX(Cords.xToCord(e.getX()));
-                chessPiecesFactory.getChessPieces().get(i).setY(Cords.yToCord(e.getY()));
-                actualChessPiece = null;
-                return;
+        for (ChessPiece chessPiece : chessPiecesFactory.getChessPieces()) {
+            if (chessPiece == actualChessPiece) {
+                chessPiece.setX(Cords.xToCord(e.getX()));
+                chessPiece.setY(Cords.yToCord(e.getY()));
             }
         }
     }

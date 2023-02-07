@@ -32,7 +32,7 @@ public class Board {
         displayLetters(g);
     }
 
-    private void displayNumbers(Graphics g) {// CHECK : 02.02.2023 displayNumbers i displayLetters są bardzo podobne. Czy trzeba to zmienić?
+    private void displayNumbers(Graphics g) {// CHECK : 02.02.2023 displayNumbers i displayLetters są bardzo podobne. Czy trzeba to zmienić? Zrobić z tego jedną metodę?
         int yCord = 20;
         for (int i = 8; i > 0; i--) {
             g.setColor(Color.GRAY);

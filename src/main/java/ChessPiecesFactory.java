@@ -32,7 +32,11 @@ public class ChessPiecesFactory {
     }
 
     public List<ChessPiece> getChessPieces() {
-        return chessPieces;
+        return chessPieces;// CHECK : 05.02.2023 czy mogę ustawić zwracanie cały czas nowej listy? (return new ArrayList<>(chessPieces)
+    }
+
+    void removeChessPieceFromFactory(ChessPiece chessPiece) {
+        chessPieces.remove(chessPiece);
     }
 }
 
