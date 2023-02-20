@@ -1,16 +1,17 @@
 import java.awt.*;
 
 public class Board {
-    private static final int SIZE_OF_FIELD = 100;
+    public static final int SIZE_OF_FIELD = 100;
+    private final Gameplay gameplay;
 
-    public static int getSIZE_OF_FIELD() {
-        return SIZE_OF_FIELD;
+    public Board(Gameplay gameplay) {
+        this.gameplay = gameplay;
     }
 
     void render(Graphics g) {
         g.setColor(Color.GRAY);
         displayChessBoard(g);
-        if (Gameplay.getActualChessPiece() != null) {
+        if (gameplay.getActualChessPiece() != null) {
             highlightSelectedField(g);
         }
         displayInfoAboutFields(g);
@@ -32,7 +33,7 @@ public class Board {
         displayLetters(g);
     }
 
-    private void displayNumbers(Graphics g) {// CHECK : 02.02.2023 displayNumbers i displayLetters są bardzo podobne. Czy trzeba to zmienić? Zrobić z tego jedną metodę?
+    private void displayNumbers(Graphics g) {// TODO: 09.02.2023 spróbować połączyć z displayetters
         int yCord = 20;
         for (int i = 8; i > 0; i--) {
             g.setColor(Color.GRAY);
@@ -60,7 +61,7 @@ public class Board {
 
     private void highlightSelectedField(Graphics g) {
         g.setColor(Color.PINK);
-        g.drawRect(Gameplay.getActualChessPiece().getX() * SIZE_OF_FIELD, Gameplay.getActualChessPiece().getY() * SIZE_OF_FIELD, SIZE_OF_FIELD, SIZE_OF_FIELD);
-        g.fillRect(Gameplay.getActualChessPiece().getX() * SIZE_OF_FIELD, Gameplay.getActualChessPiece().getY() * SIZE_OF_FIELD, SIZE_OF_FIELD, SIZE_OF_FIELD);
+        g.drawRect(gameplay.getActualChessPiece().getX() * SIZE_OF_FIELD, gameplay.getActualChessPiece().getY() * SIZE_OF_FIELD, SIZE_OF_FIELD, SIZE_OF_FIELD);
+        g.fillRect(gameplay.getActualChessPiece().getX() * SIZE_OF_FIELD, gameplay.getActualChessPiece().getY() * SIZE_OF_FIELD, SIZE_OF_FIELD, SIZE_OF_FIELD);
     }
 }

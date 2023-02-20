@@ -9,7 +9,6 @@ public class Launcher {
     }
 }
 
-
-// CHECK : 04.02.2023 zmiana aktualnego branchu na inny bez commitowania aby na nowym branchu można było wporwadzać inne zmiany?
+// TODO: 09.02.2023 osobna klasa do organizacji ruchem figur
 // CHECK : 03.02.2023 testy jednostkowe?
 // TODO: 04.02.2023 dostosowanie wyświetlania planszy i figur do okna. Na środku okna?
