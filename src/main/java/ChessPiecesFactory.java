@@ -2,9 +2,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ChessPiecesFactory {
-    private final List<ChessPiece> chessPieces = new ArrayList<>();
 
-    public ChessPiecesFactory() {
+    List<ChessPiece> createEveryChessPieces() {
+        List<ChessPiece> chessPieces = new ArrayList<>();
         for (int i = 0; i < 8; i++) {
             chessPieces.add(new ChessPiece(i, 6,ChessPieceType.PAWN, ChessPieceColor.WHITE));
             chessPieces.add(new ChessPiece(i, 1, ChessPieceType.PAWN, ChessPieceColor.BLACK));
@@ -29,14 +29,7 @@ public class ChessPiecesFactory {
                 chessPieces.add(new ChessPiece(i, 0, ChessPieceType.KING, ChessPieceColor.BLACK));
             }
         }
-    }
-
-    public List<ChessPiece> getChessPieces() {
-        return chessPieces;// CHECK : 05.02.2023 czy mogę ustawić zwracanie cały czas nowej listy? (return new ArrayList<>(chessPieces)
-    }
-
-    void removeChessPieceFromFactory(ChessPiece chessPiece) {
-        chessPieces.remove(chessPiece);
+        return chessPieces;
     }
 }
 
